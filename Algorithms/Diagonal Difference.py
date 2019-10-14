@@ -32,32 +32,33 @@ def diagonalDifference(arr):
     # Write your code here
     ls = []
     ls_1 = []
-
+    # rows = len(arr)-1
     # for x in arr:
     #     for y in x:
     #         rows = len(arr)
     #         columns = len(x)
 
     for i in range(len(arr)):
+        lena= len(arr)
         for j in range(len(arr[i])):
             if  i == j:
 
                 ls.append((arr[i][j]))
-
-            rows = len(arr)
-#figure out how to get the other diagonal
-            if rows >=0:
-                rows -=1
-                ls_1.append(arr[i][rows])
-                break
-
-
-
-    # g = sum(ls)
-    return ls_1
-a = [[11, 2, 4], 0, -1
-[4,5,6], 1, -2
-[10,8,-12]] 2, -3
+            if (i) + (j-lena) == -1:
+                ls_1.append(arr[i][j])
+    g = sum(ls)
+    h = sum(ls_1)
+    ab_diff = abs(g-h)
+    return ab_diff
+a = [[11, 2, 4],
+[4,5,6],
+[10,8,-12]]
 
 dD= diagonalDifference(a)
 print(dD)
+print(sum([0, -3]))
+print(sum([1, -2]))
+print(sum([2, -1]))
+print(sum([0, -1]))
+print(sum([1, -2]))
+print(sum([2, -3]))
